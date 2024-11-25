@@ -16,7 +16,7 @@ public class CreateAccount {
         private Long userId;
 
         @NotNull
-        @Min(100)
+        @Min(0)
         private Long initialBalance;
     }
 
@@ -32,7 +32,7 @@ public class CreateAccount {
 
         public static Response from(AccountDto accountDto) {
             return Response.builder()
-                    .userId(accountDto.getUseerId())
+                    .userId(accountDto.getUserId())
                     .accountNumber(accountDto.getAccountNumber())
                     .registeredAt(accountDto.getRegisteredAt())
                     .build();
